@@ -1,12 +1,14 @@
 const express = require('express');
 
+require('dotenv').config();
+
 const app = express();
 
 const mongoose = require('mongoose');
 
 const storyRouter = require('./routes/storyRouter');
 
-const mongoDbUrl = 'mongodb+srv://turja:simanta@cluster0.m9enl.mongodb.net/simpleblog?retryWrites=true&w=majority';
+const mongoDbUrl = process.env.MONGOURI;
 
 const connect = mongoose.connect(mongoDbUrl, {
   useNewUrlParser: true,
