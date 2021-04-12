@@ -1,4 +1,4 @@
-const bookController = (Story) => {
+const storyController = (Story) => {
   async function getStory(req, res) {
     try {
       const stories = await Story.find({});
@@ -49,4 +49,4 @@ const bookController = (Story) => {
   return { getStory, getStoryById, postStory };
 };
 
-module.exports = bookController;
+module.exports = storyController;
